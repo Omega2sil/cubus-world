@@ -25,7 +25,7 @@ requires explicit written permission from the Cubus World project owner.
 
 For permissions, licensing inquiries, or other project-related matters:
 
-**Project Owner:** Omega alias root@lilou.exe alias bilby
+**Project Owner:** Omega alias root@lilou.exe
 **Professional Email:** bilby.legowt@proton.me
 
 Please contact the owner before using any part of this source code
