@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jouer — Cubus World</title>
+    <meta
+        name="description"
+        content="Rejoins Cubus World. Serveur Minecraft accessible aux joueurs Premium et Crack."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="play-page">
+
+    <!-- Background -->
+
+    <div class="background">
+
+        <div class="grid"></div>
+
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+
+        <div class="particles"></div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-cube">C</span>
+
+            <span>
+                CUBUS<span class="logo-light"> WORLD</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html#world">
+                Le monde
+            </a>
+
+            <a href="index.html#features">
+                Fonctionnalités
+            </a>
+
+            <a href="index.html#about">
+                À propos
+            </a>
+
+        </nav>
+
+
+        <a href="index.html" class="nav-button">
+
+            Accueil
+            <span>↗</span>
+
+        </a>
+
+
+        <button class="menu-button" aria-label="Menu">
+
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- PLAY HERO -->
+
+        <section class="play-page-hero">
+
+            <div class="play-page-content reveal">
+
+
+                <span class="kicker">
+                    CUBUS WORLD / JOIN
+                </span>
+
+
+                <h1>
+
+                    Ton aventure
+                    <br>
+
+                    <span>commence ici.</span>
+
+                </h1>
+
+
+                <p class="play-description">
+
+                    Rejoins Cubus World et découvre un monde partagé
+                    où chacun peut construire, explorer et écrire
+                    sa propre histoire.
+
+                </p>
+
+
+                <!-- SERVER IP -->
+
+                <div class="server-box">
+
+                    <span class="server-label">
+                        ADRESSE DU SERVEUR
+                    </span>
+
+
+                    <div class="server-ip">
+
+                        <span id="server-ip">
+                            cubus.aternos.me
+                        </span>
+
+                        <button
+                            class="copy-ip"
+                            id="copy-ip"
+                            aria-label="Copier l'adresse du serveur"
+                        >
+                            ⧉
+                        </button>
+
+                    </div>
+
+
+                    <span class="copy-status" id="copy-status">
+                        Cliquez pour copier l'adresse
+                    </span>
+
+                </div>
+
+
+                <!-- ACCESS -->
+
+                <div class="access-grid">
+
+
+                    <div class="access-card reveal">
+
+                        <div class="access-icon">
+                            ◈
+                        </div>
+
+
+                        <div>
+
+                            <span class="access-tag">
+                                PREMIUM
+                            </span>
+
+                            <h3>
+                                Minecraft Premium
+                            </h3>
+
+                            <p>
+                                Connecte-toi normalement avec ton
+                                compte Minecraft officiel.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="access-card reveal delay">
+
+                        <div class="access-icon">
+                            ◇
+                        </div>
+
+
+                        <div>
+
+                            <span class="access-tag">
+                                CRACK
+                            </span>
+
+                            <h3>
+                                Minecraft Crack
+                            </h3>
+
+                            <p>
+                                Les joueurs utilisant une version
+                                Crack peuvent également rejoindre
+                                le serveur.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SECURITY -->
+
+                <div class="security-box reveal">
+
+                    <div class="security-status">
+
+                        <span></span>
+
+                        SÉCURISATION ACTIVE
+
+                    </div>
+
+
+                    <div class="security-content">
+
+                        <div>
+
+                            <h3>
+                                Protection &amp; identité
+                            </h3>
+
+                            <p>
+                                Le serveur dispose de systèmes de
+                                protection actifs afin de sécuriser
+                                les joueurs et leur progression.
+                            </p>
+
+                        </div>
+
+
+                        <div class="security-features">
+
+                            <span>
+                                ✓ Protection active
+                            </span>
+
+                            <span>
+                                ✓ Restauration des skins
+                            </span>
+
+                            <span>
+                                ✓ Authentification sécurisée
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BACK -->
+
+                <a
+                    href="index.html"
+                    class="button secondary play-back"
+                >
+                    ← Retour à l'accueil
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="footer-logo">
+            CUBUS WORLD
+        </div>
+
+        <span>
+            © 2026 Cubus World
+        </span>
+
+        <span>
+            Built for explorers.
+        </span>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+    <!-- COPY IP -->
+
+    <script>
+
+        const copyButton =
+            document.getElementById("copy-ip");
+
+        const serverIP =
+            document.getElementById("server-ip");
+
+        const copyStatus =
+            document.getElementById("copy-status");
+
+
+        if (copyButton && serverIP) {
+
+            copyButton.addEventListener("click", async () => {
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        serverIP.textContent.trim()
+                    );
+
+                    copyStatus.textContent =
+                        "Adresse copiée ✓";
+
+                    copyButton.textContent = "✓";
+
+
+                    setTimeout(() => {
+
+                        copyStatus.textContent =
+                            "Cliquez pour copier l'adresse";
+
+                        copyButton.textContent = "⧉";
+
+                    }, 2000);
+
+
+                } catch {
+
+                    copyStatus.textContent =
+                        "Copiez manuellement l'adresse";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
