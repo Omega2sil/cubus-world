@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cubus World — Un monde à construire</title>
-    <meta name="description" content="Cubus World — Construis. Explore. Survis.">
+    <title>Cubus World — Serveur Minecraft</title>
+    <meta
+        name="description"
+        content="Cubus World — Un monde, trois puissances, une histoire."
+    >
 
+    <link rel="icon" type="image/png" href="pic/cubus-pp.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Background -->
+    <!-- BACKGROUND -->
+
     <div class="background">
         <div class="grid"></div>
         <div class="glow glow-1"></div>
         <div class="glow glow-2"></div>
-        <div class="particles"></div>
     </div>
 
-    <!-- Navigation -->
+
+    <!-- NAVIGATION -->
+
     <header class="navbar">
 
-        <a href="#home" class="logo">
-            <span class="logo-cube">C</span>
-            <span>CUBUS<span class="logo-light"> WORLD</span></span>
+        <a href="index.html" class="logo">
+
+            <img
+                src="pic/cubus-pp.png"
+                alt="Cubus World"
+                class="logo-image"
+            >
+
+            <span>
+                CUBUS
+                <span class="logo-light">WORLD</span>
+            </span>
+
         </a>
+
 
         <nav class="nav-links">
-            <a href="#world">Le monde</a>
-            <a href="#features">Fonctionnalités</a>
+
+            <a href="#world">Les royaumes</a>
+            <a href="#features">Le serveur</a>
             <a href="#about">À propos</a>
+
         </nav>
 
-        <a href="#play" class="nav-button">
-            Jouer <span>↗</span>
+
+        <a href="play.html" class="nav-button">
+            Jouer
+            <span>↗</span>
         </a>
 
-        <button class="menu-button" aria-label="Menu">
+
+        <button
+            class="menu-button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+        >
             <span></span>
             <span></span>
         </button>
@@ -49,57 +76,96 @@
     <main>
 
         <!-- HERO -->
-        <section id="home" class="hero">
+
+        <section class="hero" id="home">
 
             <div class="hero-content reveal">
 
                 <div class="status">
+
                     <span></span>
-                    LE MONDE T'ATTEND
+
+                    CUBUS WORLD
+
                 </div>
 
+
                 <h1>
-                    BUILD.
+
+                    ENTER.
                     <br>
+
                     <span>EXPLORE.</span>
                     <br>
-                    BECOME.
+
+                    MAKE HISTORY.
+
                 </h1>
 
+
                 <p>
+
                     Bienvenue dans <strong>Cubus World</strong>.
-                    Un monde immense, vivant et entièrement construit
-                    autour de tes aventures.
+                    Un serveur où royaumes, politique, communautés
+                    et aventures se rencontrent dans un monde
+                    en constante évolution.
+
                 </p>
+
 
                 <div class="hero-buttons">
 
-                    <a href="#play" class="button primary">
-                        Commencer l'aventure
+                    <a
+                        href="play.html"
+                        class="button primary"
+                    >
+                        Rejoindre Cubus World
                         <span>→</span>
                     </a>
 
-                    <a href="#world" class="button secondary">
-                        Découvrir le monde
+
+                    <a
+                        href="#world"
+                        class="button secondary"
+                    >
+                        Découvrir les royaumes
                     </a>
 
                 </div>
+
 
                 <div class="hero-stats">
 
                     <div>
+
+                        <strong>03</strong>
+
+                        <span>
+                            Puissances
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
                         <strong>∞</strong>
-                        <span>Possibilités</span>
+
+                        <span>
+                            Histoires
+                        </span>
+
                     </div>
 
-                    <div>
-                        <strong>01</strong>
-                        <span>Monde</span>
-                    </div>
 
                     <div>
-                        <strong>100%</strong>
-                        <span>À explorer</span>
+
+                        <strong>24/7</strong>
+
+                        <span>
+                            Monde vivant
+                        </span>
+
                     </div>
 
                 </div>
@@ -107,58 +173,86 @@
             </div>
 
 
-            <!-- 3D-ish CUBE -->
+            <!-- HERO VISUAL -->
+
             <div class="hero-object reveal delay">
 
-                <div class="cube">
+                <div class="hero-orbit orbit-one"></div>
+                <div class="hero-orbit orbit-two"></div>
 
-                    <div class="cube-face front"></div>
-                    <div class="cube-face back"></div>
-                    <div class="cube-face right"></div>
-                    <div class="cube-face left"></div>
-                    <div class="cube-face top"></div>
-                    <div class="cube-face bottom"></div>
+
+                <div class="hero-emblem">
+
+                    <img
+                        src="pic/cubus-pp.png"
+                        alt="Cubus World"
+                    >
 
                 </div>
+
 
                 <div class="floating-card card-1">
+
                     <span>◆</span>
-                    WORLD
+
+                    THREE REALMS
+
                 </div>
 
+
                 <div class="floating-card card-2">
+
                     <span>✦</span>
-                    ADVENTURE
+
+                    ONE WORLD
+
                 </div>
 
             </div>
 
 
             <div class="scroll">
+
                 <span></span>
+
                 SCROLL TO EXPLORE
+
             </div>
 
         </section>
 
 
         <!-- WORLD -->
-        <section id="world" class="section world">
+
+        <section
+            id="world"
+            class="section world"
+        >
 
             <div class="section-heading reveal">
 
-                <span class="kicker">01 / THE WORLD</span>
+                <span class="kicker">
+                    01 / THE REALMS
+                </span>
+
 
                 <h2>
+
                     Un monde.
                     <br>
-                    <span>Des milliers d'histoires.</span>
+
+                    <span>Trois puissances.</span>
+
                 </h2>
 
+
                 <p>
-                    Chaque endroit peut devenir le début d'une nouvelle
-                    aventure. Explore des terres inconnues, construis
-                    ton royaume et laisse ta marque.
+
+                    Trois nations possèdent leurs propres territoires,
+                    leurs propres ambitions et leur propre identité.
+                    À toi de découvrir ce qui se cache derrière leurs
+                    frontières.
+
                 </p>
 
             </div>
@@ -166,22 +260,48 @@
 
             <div class="world-grid">
 
-                <article class="world-card forest reveal">
+
+                <!-- LOVIXIEN -->
+
+                <article
+                    class="world-card lovixien reveal"
+                >
+
+                    <img
+                        src="pic/cubus-pp.png"
+                        alt=""
+                        class="world-image"
+                    >
 
                     <div class="card-overlay"></div>
 
+
                     <div class="world-card-content">
 
-                        <span>BIOME 01</span>
+                        <span>
+                            REALM 01
+                        </span>
 
-                        <h3>Wildland</h3>
+
+                        <h3>
+                            Empire Lovixien
+                        </h3>
+
 
                         <p>
-                            Forêts, montagnes et territoires sauvages.
+
+                            Découvrez l'histoire,
+                            le territoire et les particularités
+                            de l'Empire Lovixien.
+
                         </p>
 
-                        <a href="#">
-                            Explorer →
+
+                        <a href="lovixien.html">
+
+                            Découvrir l'empire
+                            <span>→</span>
+
                         </a>
 
                     </div>
@@ -189,23 +309,47 @@
                 </article>
 
 
-                <article class="world-card ruins reveal delay">
+                <!-- FOSTERIEN -->
+
+                <article
+                    class="world-card fosterien reveal delay"
+                >
+
+                    <img
+                        src="pic/fosterien-pp.png"
+                        alt=""
+                        class="world-image"
+                    >
 
                     <div class="card-overlay"></div>
 
+
                     <div class="world-card-content">
 
-                        <span>BIOME 02</span>
+                        <span>
+                            REALM 02
+                        </span>
 
-                        <h3>Ancient Ruins</h3>
+
+                        <h3>
+                            Empire Fosterien
+                        </h3>
+
 
                         <p>
-                            Des civilisations oubliées attendent
-                            d'être découvertes.
+
+                            Découvrez l'histoire,
+                            le territoire et les particularités
+                            de l'Empire Fosterien.
+
                         </p>
 
-                        <a href="#">
-                            Explorer →
+
+                        <a href="fosterien.html">
+
+                            Découvrir l'empire
+                            <span>→</span>
+
                         </a>
 
                     </div>
@@ -213,23 +357,46 @@
                 </article>
 
 
-                <article class="world-card void reveal">
+                <!-- RSH -->
+
+                <article
+                    class="world-card rsh reveal"
+                >
+
+                    <img
+                        src="pic/RSH-pp.png"
+                        alt=""
+                        class="world-image"
+                    >
 
                     <div class="card-overlay"></div>
 
+
                     <div class="world-card-content">
 
-                        <span>BIOME 03</span>
+                        <span>
+                            REALM 03
+                        </span>
 
-                        <h3>The Void</h3>
+
+                        <h3>
+                            RSH
+                        </h3>
+
 
                         <p>
-                            Là où les règles du monde commencent
-                            à disparaître.
+
+                            République Socialiste de la Houe.
+                            Découvrez son histoire et son territoire.
+
                         </p>
 
-                        <a href="#">
-                            Explorer →
+
+                        <a href="rsh.html">
+
+                            Découvrir la république
+                            <span>→</span>
+
                         </a>
 
                     </div>
@@ -242,34 +409,66 @@
 
 
         <!-- FEATURES -->
-        <section id="features" class="section features">
+
+        <section
+            id="features"
+            class="section features"
+        >
 
             <div class="section-heading reveal">
 
-                <span class="kicker">02 / FEATURES</span>
+                <span class="kicker">
+                    02 / THE SERVER
+                </span>
+
 
                 <h2>
-                    Plus qu'un jeu.
+
+                    Pourquoi
                     <br>
-                    <span>Un univers.</span>
+
+                    <span>Cubus World ?</span>
+
                 </h2>
+
+
+                <p>
+
+                    Cubus World n'est pas simplement une map.
+                    C'est un serveur pensé autour de son univers,
+                    de ses joueurs et des événements qui s'y déroulent.
+
+                </p>
 
             </div>
 
 
             <div class="features-grid">
 
+
                 <article class="feature reveal">
 
-                    <div class="feature-number">01</div>
+                    <div class="feature-number">
+                        01
+                    </div>
 
-                    <div class="feature-icon">◈</div>
 
-                    <h3>Build</h3>
+                    <div class="feature-icon">
+                        ◈
+                    </div>
+
+
+                    <h3>
+                        Un monde vivant
+                    </h3>
+
 
                     <p>
-                        Construis absolument tout ce que ton imagination
-                        peut créer.
+
+                        Plusieurs royaumes évoluent au sein
+                        d'un même monde et construisent leur propre
+                        histoire.
+
                     </p>
 
                 </article>
@@ -277,15 +476,26 @@
 
                 <article class="feature reveal delay">
 
-                    <div class="feature-number">02</div>
+                    <div class="feature-number">
+                        02
+                    </div>
 
-                    <div class="feature-icon">◇</div>
 
-                    <h3>Explore</h3>
+                    <div class="feature-icon">
+                        ⚔
+                    </div>
+
+
+                    <h3>
+                        Une histoire
+                    </h3>
+
 
                     <p>
-                        Découvre des régions, secrets et endroits
-                        que personne n'a encore trouvés.
+
+                        Les décisions des joueurs peuvent participer
+                        à l'évolution du monde et de ses royaumes.
+
                     </p>
 
                 </article>
@@ -293,15 +503,26 @@
 
                 <article class="feature reveal">
 
-                    <div class="feature-number">03</div>
+                    <div class="feature-number">
+                        03
+                    </div>
 
-                    <div class="feature-icon">✦</div>
 
-                    <h3>Live</h3>
+                    <div class="feature-icon">
+                        ◇
+                    </div>
+
+
+                    <h3>
+                        Une communauté
+                    </h3>
+
 
                     <p>
-                        Un monde partagé avec une communauté
-                        qui évolue constamment.
+
+                        Rejoins d'autres joueurs et participe
+                        à la vie de Cubus World.
+
                     </p>
 
                 </article>
@@ -309,14 +530,26 @@
 
                 <article class="feature reveal delay">
 
-                    <div class="feature-number">04</div>
+                    <div class="feature-number">
+                        04
+                    </div>
 
-                    <div class="feature-icon">∞</div>
 
-                    <h3>Create</h3>
+                    <div class="feature-icon">
+                        🛡
+                    </div>
+
+
+                    <h3>
+                        Un serveur protégé
+                    </h3>
+
 
                     <p>
-                        Ton aventure, tes règles, ton histoire.
+
+                        Anti-cheat solide et systèmes destinés
+                        à maintenir une expérience de jeu propre.
+
                     </p>
 
                 </article>
@@ -326,29 +559,45 @@
         </section>
 
 
-        <!-- BIG CTA -->
-        <section id="play" class="play-section">
+        <!-- SERVER CTA -->
 
-            <div class="play-background"></div>
+        <section class="server-cta">
 
-            <div class="play-content reveal">
+            <div class="server-cta-bg"></div>
 
-                <span class="kicker">03 / YOUR ADVENTURE</span>
+
+            <div class="server-cta-content reveal">
+
+                <span class="kicker">
+                    03 / JOIN
+                </span>
+
 
                 <h2>
-                    Your world
+
+                    Ton histoire
                     <br>
-                    <span>starts here.</span>
+
+                    <span>commence ici.</span>
+
                 </h2>
 
+
                 <p>
-                    Il ne manque plus qu'une chose.
-                    Toi.
+
+                    Premium ou crack, Cubus World t'attend.
+
                 </p>
 
-                <a href="#" class="button primary big">
-                    Rejoindre Cubus World
+
+                <a
+                    href="play.html"
+                    class="button primary big"
+                >
+
+                    Comment jouer
                     <span>↗</span>
+
                 </a>
 
             </div>
@@ -357,25 +606,44 @@
 
 
         <!-- ABOUT -->
-        <section id="about" class="section about">
 
-            <div class="about-big">
+        <section
+            id="about"
+            class="section about"
+        >
+
+            <div class="about-background-text">
                 CUBUS
             </div>
 
+
             <div class="about-content reveal">
 
-                <span class="kicker">04 / ABOUT</span>
+                <span class="kicker">
+                    04 / ABOUT CUBUS
+                </span>
+
 
                 <h2>
-                    Small cubes.
+
+                    One world.
                     <br>
-                    <span>Big worlds.</span>
+
+                    <span>Many stories.</span>
+
                 </h2>
 
+
                 <p>
-                    Cubus World est pensé comme un monde où la
-                    construction n'est pas une limite, mais un langage.
+
+                    Cubus World est un univers partagé où
+                    différentes puissances coexistent,
+                    s'affrontent, coopèrent et évoluent ensemble.
+
+                    <br><br>
+
+                    Le monde appartient à ceux qui l'écrivent.
+
                 </p>
 
             </div>
@@ -388,15 +656,24 @@
     <footer>
 
         <div class="footer-logo">
+
+            <img
+                src="pic/cubus-pp.png"
+                alt=""
+            >
+
             CUBUS WORLD
+
         </div>
+
 
         <span>
             © 2026 Cubus World
         </span>
 
+
         <span>
-            Built for explorers.
+            ENTER THE WORLD.
         </span>
 
     </footer>
@@ -405,4 +682,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
