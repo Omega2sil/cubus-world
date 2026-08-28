@@ -1,0 +1,376 @@
+/* =========================
+   NATIONS PAGE
+========================= */
+
+.nations-page {
+    min-height: 100vh;
+}
+
+
+/* HERO */
+
+.nations-hero {
+    min-height: 75vh;
+
+    max-width: var(--max);
+
+    margin: auto;
+
+    display: grid;
+
+    place-items: center;
+
+    text-align: center;
+
+    padding: 160px 30px 100px;
+}
+
+
+.nations-hero-content {
+    max-width: 800px;
+}
+
+
+.nations-hero h1 {
+    font-size: clamp(55px, 8vw, 95px);
+
+    line-height: .9;
+
+    letter-spacing: -.075em;
+
+    margin: 25px 0;
+}
+
+
+.nations-hero h1 span,
+.nations-heading h2 span,
+.nations-cta h2 span {
+    background: linear-gradient(
+        100deg,
+        white,
+        var(--green),
+        var(--cyan)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+.nations-hero p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* NATIONS SECTION */
+
+.nations-section {
+    max-width: var(--max);
+
+    margin: auto;
+
+    padding: 100px 30px 140px;
+}
+
+
+.nations-heading {
+    margin-bottom: 60px;
+}
+
+
+.nations-heading h2 {
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: .94;
+
+    letter-spacing: -.06em;
+
+    margin-top: 20px;
+}
+
+
+/* NATION CARDS */
+
+.nations-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.nation-card {
+    position: relative;
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    transition:
+        transform .5s,
+        border-color .5s;
+}
+
+
+.nation-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(124,255,155,.3);
+}
+
+
+.nation-background,
+.nation-overlay {
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.nation-background {
+    transition: transform 1s;
+}
+
+
+.nation-card:hover .nation-background {
+    transform: scale(1.06);
+}
+
+
+.lovixien .nation-background {
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(124,255,155,.3),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #16281c,
+            #07100b 75%
+        );
+}
+
+
+.fosterien .nation-background {
+    background:
+        radial-gradient(
+            circle at 70% 25%,
+            rgba(155,108,255,.3),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #241c31,
+            #09070d 75%
+        );
+}
+
+
+.rsh .nation-background {
+    background:
+        radial-gradient(
+            circle at 70% 25%,
+            rgba(85,230,255,.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #10252a,
+            #05090b 75%
+        );
+}
+
+
+.nation-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.85),
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.7)
+        );
+}
+
+
+.nation-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 430px;
+
+    padding: 45px;
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.nation-number {
+    font-size: 75px;
+
+    font-weight: 700;
+
+    letter-spacing: -.08em;
+
+    color: rgba(255,255,255,.12);
+}
+
+
+.nation-info {
+    max-width: 650px;
+}
+
+
+.nation-label {
+    color: var(--green);
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+}
+
+
+.nation-info h3 {
+    font-size: clamp(35px, 5vw, 60px);
+
+    letter-spacing: -.055em;
+
+    margin: 10px 0 15px;
+}
+
+
+.nation-info p {
+    max-width: 520px;
+
+    color: #a0a8ae;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* CTA */
+
+.nations-cta {
+    min-height: 550px;
+
+    display: grid;
+
+    place-items: center;
+
+    text-align: center;
+
+    padding: 80px 30px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.nations-cta-content {
+    max-width: 700px;
+}
+
+
+.nations-cta h2 {
+    font-size: clamp(45px, 7vw, 80px);
+
+    line-height: .92;
+
+    letter-spacing: -.065em;
+
+    margin: 20px 0;
+}
+
+
+.nations-cta p {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .nations-hero {
+        min-height: 70vh;
+
+        padding:
+            130px
+            20px
+            80px;
+    }
+
+
+    .nations-section {
+        padding:
+            80px
+            20px
+            100px;
+    }
+
+
+    .nation-card {
+        min-height: 420px;
+    }
+
+
+    .nation-content {
+        min-height: 420px;
+
+        padding: 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: flex-end;
+
+        gap: 10px;
+    }
+
+
+    .nation-number {
+        position: absolute;
+
+        top: 25px;
+        right: 25px;
+
+        font-size: 55px;
+    }
+
+
+    .nation-info h3 {
+        font-size: 38px;
+    }
+
+}
