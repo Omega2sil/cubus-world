@@ -1,0 +1,674 @@
+/* =========================
+   LOVIXIEN PAGE
+========================= */
+
+.lovixien-page {
+    --nation-accent: var(--green);
+    --nation-accent-soft: rgba(124,255,155,.08);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.nation-hero {
+    min-height: 100svh;
+
+    max-width: var(--max);
+
+    margin: auto;
+
+    padding: 160px 30px 100px;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr .85fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+.nation-hero-content {
+    max-width: 700px;
+}
+
+
+.nation-hero h1 {
+    font-size: clamp(60px, 8vw, 105px);
+
+    line-height: .87;
+
+    letter-spacing: -.075em;
+
+    margin: 25px 0;
+}
+
+
+.nation-hero h1 span {
+    background: linear-gradient(
+        100deg,
+        white,
+        var(--nation-accent),
+        var(--cyan)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+.nation-slogan {
+    color: var(--nation-accent);
+
+    font-size: 12px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+
+.nation-intro {
+    max-width: 600px;
+
+    color: var(--muted);
+
+    line-height: 1.75;
+
+    font-size: 15px;
+}
+
+
+.nation-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   EMBLEM
+========================= */
+
+.nation-emblem {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.emblem-frame {
+    width: min(100%, 380px);
+
+    aspect-ratio: 1 / 1;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.01)
+        );
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.35);
+}
+
+
+.emblem-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            var(--nation-accent-soft),
+            transparent 60%
+        );
+
+    border: 1px solid rgba(255,255,255,.05);
+}
+
+
+.emblem-placeholder span {
+    color: #687078;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+}
+
+
+.emblem-placeholder strong {
+    margin-top: 10px;
+
+    font-size: 28px;
+
+    letter-spacing: -.04em;
+}
+
+
+.emblem-caption {
+    color: #596269;
+
+    font-size: 9px;
+
+    letter-spacing: .16em;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.nation-section {
+    max-width: var(--max);
+
+    margin: auto;
+
+    padding: 120px 30px;
+}
+
+
+.nation-overview {
+    border-top: 1px solid var(--border);
+}
+
+
+.nation-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 60px;
+}
+
+
+.nation-stat {
+    padding: 25px;
+
+    min-height: 130px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            transparent
+        );
+}
+
+
+.nation-stat span,
+.info-list span,
+.relation-card span {
+    display: block;
+
+    color: #687078;
+
+    font-size: 9px;
+
+    letter-spacing: .16em;
+}
+
+
+.nation-stat strong {
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.nation-two-columns {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.nation-text p {
+    max-width: 560px;
+
+    color: var(--muted);
+
+    line-height: 1.75;
+
+    font-size: 14px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   HISTORY CARD
+========================= */
+
+.history-card {
+    padding: 35px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124,255,155,.045),
+            transparent
+        );
+}
+
+
+.history-card span {
+    color: #687078;
+
+    font-size: 9px;
+
+    letter-spacing: .15em;
+}
+
+
+.history-card strong {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 19px;
+}
+
+
+.history-line {
+    width: 1px;
+
+    height: 45px;
+
+    margin: 15px 0;
+
+    background:
+        linear-gradient(
+            var(--nation-accent),
+            transparent
+        );
+}
+
+
+/* =========================
+   TERRITORY
+========================= */
+
+.map-placeholder {
+    min-height: 420px;
+
+    margin-top: 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            var(--nation-accent-soft),
+            transparent 55%
+        );
+
+    text-align: center;
+}
+
+
+.map-placeholder span {
+    color: #687078;
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+}
+
+
+.map-placeholder strong {
+    margin-top: 12px;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   GOVERNMENT
+========================= */
+
+.info-list {
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+}
+
+
+.info-list div {
+    padding: 22px 25px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.info-list div:last-child {
+    border-bottom: none;
+}
+
+
+.info-list strong {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   MILITARY
+========================= */
+
+.military-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-top: 60px;
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            transparent
+        );
+}
+
+
+.military-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 15px;
+
+    background: var(--nation-accent-soft);
+
+    color: var(--nation-accent);
+
+    font-size: 24px;
+}
+
+
+.military-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+
+.military-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RELATIONS
+========================= */
+
+.relations-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 60px;
+}
+
+
+.relation-card {
+    min-height: 150px;
+
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            transparent
+        );
+}
+
+
+.relation-card strong {
+    font-size: 15px;
+
+    color: var(--nation-accent);
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.nation-final {
+    min-height: 550px;
+
+    display: grid;
+
+    place-items: center;
+
+    text-align: center;
+
+    padding: 100px 30px;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            var(--nation-accent-soft),
+            transparent 45%
+        );
+}
+
+
+.nation-final h2 {
+    font-size: clamp(50px, 7vw, 85px);
+
+    line-height: .9;
+
+    letter-spacing: -.07em;
+
+    margin: 20px 0;
+}
+
+
+.nation-final h2 span {
+    background: linear-gradient(
+        100deg,
+        white,
+        var(--nation-accent),
+        var(--cyan)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+.nation-final p {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nation-hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding:
+            130px
+            20px
+            80px;
+
+        gap: 50px;
+    }
+
+
+    .nation-intro {
+        margin: auto;
+    }
+
+
+    .nation-actions {
+        justify-content: center;
+    }
+
+
+    .nation-emblem {
+        order: -1;
+    }
+
+
+    .emblem-frame {
+        max-width: 280px;
+    }
+
+
+    .nation-section {
+        padding:
+            90px
+            20px;
+    }
+
+
+    .nation-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .nation-two-columns {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .relations-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .nation-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .military-card {
+        flex-direction: column;
+    }
+
+}
