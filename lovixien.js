@@ -1,11 +1,11 @@
 // =========================
-// LOVIXIEN — INTRO ANIMATION
+// LOVIXIEN — FIREWORK INTRO
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
 
     // =========================
-    // CONTAINER.
+    // CONTAINER
     // =========================
 
     const intro = document.createElement("div");
@@ -31,301 +31,160 @@ document.addEventListener("DOMContentLoaded", () => {
 
             pointer-events: none;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
             overflow: hidden;
 
             animation:
-                lovixienIntroFade 6s ease forwards;
+                lovixienIntroFade 7s ease forwards;
         }
 
 
         /* =========================
-           SWORDS
+           FIREWORK PARTICLE
         ========================= */
 
-        .lovixien-sword {
-            position: absolute;
-
-            width: 230px;
-            height: 8px;
-
-            opacity: 0;
-
-            transform-origin: center;
-
-            filter:
-                drop-shadow(
-                    0 0 12px rgba(124,255,155,.45)
-                );
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255,255,255,.25),
-                    white,
-                    rgba(124,255,155,.8),
-                    transparent
-                );
-
-            border-radius: 100px;
-        }
-
-
-        .lovixien-sword::before {
-            content: "";
+        .lovixien-firework-particle {
 
             position: absolute;
 
-            left: 0;
-            top: -4px;
-
-            width: 22px;
-            height: 16px;
-
-            border-radius: 4px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #15191d,
-                    #69737a
-                );
-
-            box-shadow:
-                0 0 10px rgba(255,255,255,.15);
-        }
-
-
-        .lovixien-sword::after {
-            content: "";
-
-            position: absolute;
-
-            right: 0;
-            top: 1px;
-
-            width: 18px;
-            height: 6px;
-
-            background: #15191d;
-
-            border-radius: 2px;
-        }
-
-
-        .sword-left {
-            animation:
-                swordLeft 1.8s
-                cubic-bezier(.16,.8,.25,1)
-                forwards;
-        }
-
-
-        .sword-right {
-            animation:
-                swordRight 1.8s
-                cubic-bezier(.16,.8,.25,1)
-                forwards;
-        }
-
-
-        /* =========================
-           COINS
-        ========================= */
-
-        .lovixien-coin {
-            position: absolute;
-
-            top: -40px;
-
-            width: 14px;
-            height: 14px;
+            width: 4px;
+            height: 4px;
 
             border-radius: 50%;
 
-            display: grid;
-            place-items: center;
-
-            font-size: 8px;
-            font-weight: 700;
-
-            color: rgba(255,255,255,.8);
-
-            background:
-                radial-gradient(
-                    circle at 35% 30%,
-                    white,
-                    #7cff9b 20%,
-                    #3a9d57 65%,
-                    #16351f
-                );
-
-            border: 1px solid
-                rgba(255,255,255,.35);
-
-            box-shadow:
-                0 0 10px
-                rgba(124,255,155,.25);
+            left: 0;
+            top: 0;
 
             opacity: 0;
 
-            animation:
-                coinFall var(--fall-time)
-                linear forwards;
+            box-shadow:
+                0 0 6px currentColor,
+                0 0 14px currentColor;
 
-            animation-delay: var(--delay);
+            animation:
+                fireworkParticle
+                var(--duration)
+                cubic-bezier(.1,.65,.25,1)
+                forwards;
+
+            animation-delay:
+                var(--delay);
         }
 
 
         /* =========================
-           CENTER FLASH
+           FIREWORK CORE
         ========================= */
 
-        .lovixien-flash {
+        .lovixien-firework-core {
+
             position: absolute;
 
-            width: 20px;
-            height: 20px;
+            width: 7px;
+            height: 7px;
 
             border-radius: 50%;
 
             background: white;
 
             box-shadow:
-                0 0 20px white,
-                0 0 60px var(--green),
-                0 0 120px var(--green);
+                0 0 10px white,
+                0 0 25px currentColor,
+                0 0 50px currentColor;
 
             opacity: 0;
 
             animation:
-                lovixienFlash 1.8s ease forwards;
+                fireworkCore 1s ease forwards;
         }
 
 
         /* =========================
-           ANIMATIONS
+           PARTICLE ANIMATION
         ========================= */
 
-        @keyframes swordLeft {
+        @keyframes fireworkParticle {
 
             0% {
+
                 opacity: 0;
 
                 transform:
-                    translateX(-420px)
-                    translateY(-180px)
-                    rotate(-48deg);
+                    translate(0, 0)
+                    scale(.3);
+
+            }
+
+            8% {
+
+                opacity: 1;
+
+                transform:
+                    translate(
+                        calc(var(--x) * .15),
+                        calc(var(--y) * .15)
+                    )
+                    scale(1);
+
+            }
+
+            65% {
+
+                opacity: .85;
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(
+                        var(--x),
+                        calc(var(--y) + 80px)
+                    )
+                    scale(.15);
+
+            }
+
+        }
+
+
+        /* =========================
+           CORE ANIMATION
+        ========================= */
+
+        @keyframes fireworkCore {
+
+            0% {
+
+                opacity: 0;
+
+                transform: scale(.1);
+
             }
 
             25% {
-                opacity: .35;
-            }
 
-            70% {
-                opacity: .16;
+                opacity: 1;
+
+                transform: scale(1.4);
+
             }
 
             100% {
+
                 opacity: 0;
 
-                transform:
-                    translateX(0)
-                    translateY(0)
-                    rotate(43deg);
+                transform: scale(4);
+
             }
 
         }
 
 
-        @keyframes swordRight {
-
-            0% {
-                opacity: 0;
-
-                transform:
-                    translateX(420px)
-                    translateY(-180px)
-                    rotate(48deg);
-            }
-
-            25% {
-                opacity: .35;
-            }
-
-            70% {
-                opacity: .16;
-            }
-
-            100% {
-                opacity: 0;
-
-                transform:
-                    translateX(0)
-                    translateY(0)
-                    rotate(-43deg);
-            }
-
-        }
-
-
-        @keyframes coinFall {
-
-            0% {
-                opacity: 0;
-
-                transform:
-                    translateY(0)
-                    rotateY(0deg)
-                    rotateZ(0deg);
-            }
-
-            12% {
-                opacity: .75;
-            }
-
-            75% {
-                opacity: .45;
-            }
-
-            100% {
-                opacity: 0;
-
-                transform:
-                    translateY(100vh)
-                    rotateY(720deg)
-                    rotateZ(180deg);
-            }
-
-        }
-
-
-        @keyframes lovixienFlash {
-
-            0% {
-                opacity: 0;
-
-                transform: scale(.2);
-            }
-
-            45% {
-                opacity: .65;
-
-                transform: scale(1);
-            }
-
-            100% {
-                opacity: 0;
-
-                transform: scale(3);
-            }
-
-        }
-
+        /* =========================
+           INTRO FADE
+        ========================= */
 
         @keyframes lovixienIntroFade {
 
@@ -333,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 opacity: 1;
             }
 
-            70% {
+            75% {
                 opacity: 1;
             }
 
@@ -362,89 +221,185 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =========================
-    // SWORDS
+    // FIREWORK CREATOR
     // =========================
 
-    const swordLeft = document.createElement("div");
+    function createFirework(x, y, color, delay = 0) {
 
-    swordLeft.className =
-        "lovixien-sword sword-left";
+        // Core
 
+        const core =
+            document.createElement("div");
 
-    const swordRight = document.createElement("div");
+        core.className =
+            "lovixien-firework-core";
 
-    swordRight.className =
-        "lovixien-sword sword-right";
+        core.style.left =
+            `${x}px`;
 
+        core.style.top =
+            `${y}px`;
 
-    intro.appendChild(swordLeft);
-    intro.appendChild(swordRight);
+        core.style.color =
+            color;
 
+        core.style.animationDelay =
+            `${delay}s`;
 
-    // =========================
-    // FLASH
-    // =========================
-
-    const flash = document.createElement("div");
-
-    flash.className =
-        "lovixien-flash";
-
-    intro.appendChild(flash);
+        intro.appendChild(core);
 
 
-    // =========================
-    // COINS
-    // =========================
+        // Particles
 
-    const coinCount = 24;
+        const particleCount = 42;
 
-    for (let i = 0; i < coinCount; i++) {
+        for (let i = 0; i < particleCount; i++) {
 
-        const coin = document.createElement("div");
+            const particle =
+                document.createElement("div");
 
-        coin.className =
-            "lovixien-coin";
-
-        // Les pièces restent principalement
-        // autour du centre, entre les épées.
-
-        const x =
-            (Math.random() - 0.5) * 260;
-
-        const delay =
-            1.0 + Math.random() * 1.7;
-
-        const fallTime =
-            2.2 + Math.random() * 2.2;
+            particle.className =
+                "lovixien-firework-particle";
 
 
-        coin.style.left =
-            `calc(50% + ${x}px)`;
-
-        coin.style.setProperty(
-            "--delay",
-            `${delay}s`
-        );
-
-        coin.style.setProperty(
-            "--fall-time",
-            `${fallTime}s`
-        );
+            const angle =
+                (Math.PI * 2 / particleCount) * i
+                + (Math.random() - .5) * .15;
 
 
-        // Légère variation de taille
-
-        const scale =
-            0.7 + Math.random() * 0.8;
-
-        coin.style.transform =
-            `scale(${scale})`;
+            const distance =
+                80 + Math.random() * 150;
 
 
-        intro.appendChild(coin);
+            const px =
+                Math.cos(angle) * distance;
+
+            const py =
+                Math.sin(angle) * distance;
+
+
+            particle.style.left =
+                `${x}px`;
+
+            particle.style.top =
+                `${y}px`;
+
+            particle.style.color =
+                color;
+
+
+            particle.style.setProperty(
+                "--x",
+                `${px}px`
+            );
+
+            particle.style.setProperty(
+                "--y",
+                `${py}px`
+            );
+
+
+            particle.style.setProperty(
+                "--delay",
+                `${delay + Math.random() * .12}s`
+            );
+
+
+            particle.style.setProperty(
+                "--duration",
+                `${2.2 + Math.random() * .9}s`
+            );
+
+
+            // Variation de taille
+
+            const size =
+                2 + Math.random() * 3;
+
+            particle.style.width =
+                `${size}px`;
+
+            particle.style.height =
+                `${size}px`;
+
+
+            intro.appendChild(particle);
+
+        }
 
     }
+
+
+    // =========================
+    // FIREWORKS
+    // =========================
+
+    const fireworks = [
+
+        {
+            x: "20%",
+            y: "30%",
+            color: "#ff4f81",
+            delay: .2
+        },
+
+        {
+            x: "50%",
+            y: "23%",
+            color: "#7cff9b",
+            delay: .7
+        },
+
+        {
+            x: "80%",
+            y: "31%",
+            color: "#62d9ff",
+            delay: 1.1
+        },
+
+        {
+            x: "34%",
+            y: "52%",
+            color: "#c77dff",
+            delay: 1.6
+        },
+
+        {
+            x: "68%",
+            y: "50%",
+            color: "#ffd166",
+            delay: 2.0
+        },
+
+        {
+            x: "50%",
+            y: "40%",
+            color: "#ff6b35",
+            delay: 2.5
+        }
+
+    ];
+
+
+    fireworks.forEach(firework => {
+
+        const x =
+            window.innerWidth *
+            parseFloat(firework.x) / 100;
+
+        const y =
+            window.innerHeight *
+            parseFloat(firework.y) / 100;
+
+
+        createFirework(
+            x,
+            y,
+            firework.color,
+            firework.delay
+        );
+
+    });
 
 
     // =========================
@@ -456,11 +411,11 @@ document.addEventListener("DOMContentLoaded", () => {
         intro.remove();
         style.remove();
 
-    }, 6500);
+    }, 7200);
 
 
     console.log(
-        "Empire Lovixien — page chargée."
+        "Empire Lovixien — fireworks intro."
     );
 
 });
