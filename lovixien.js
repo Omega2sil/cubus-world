@@ -1,674 +1,466 @@
-/* =========================
-   LOVIXIEN PAGE
-========================= */
+// =========================
+// LOVIXIEN — INTRO ANIMATION
+// =========================
 
-.lovixien-page {
-    --nation-accent: var(--green);
-    --nation-accent-soft: rgba(124,255,155,.08);
-}
+document.addEventListener("DOMContentLoaded", () => {
 
+    // =========================
+    // CONTAINER
+    // =========================
 
-/* =========================
-   HERO
-========================= */
+    const intro = document.createElement("div");
 
-.nation-hero {
-    min-height: 100svh;
+    intro.className = "lovixien-intro";
 
-    max-width: var(--max);
-
-    margin: auto;
-
-    padding: 160px 30px 100px;
-
-    display: grid;
-
-    grid-template-columns: 1.15fr .85fr;
-
-    align-items: center;
-
-    gap: 70px;
-}
+    document.body.appendChild(intro);
 
 
-.nation-hero-content {
-    max-width: 700px;
-}
+    // =========================
+    // STYLE
+    // =========================
+
+    const style = document.createElement("style");
+
+    style.textContent = `
+
+        .lovixien-intro {
+            position: fixed;
+            inset: 0;
+
+            z-index: 9999;
+
+            pointer-events: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            animation:
+                lovixienIntroFade 6s ease forwards;
+        }
 
 
-.nation-hero h1 {
-    font-size: clamp(60px, 8vw, 105px);
+        /* =========================
+           SWORDS
+        ========================= */
 
-    line-height: .87;
+        .lovixien-sword {
+            position: absolute;
 
-    letter-spacing: -.075em;
+            width: 230px;
+            height: 8px;
 
-    margin: 25px 0;
-}
+            opacity: 0;
+
+            transform-origin: center;
+
+            filter:
+                drop-shadow(
+                    0 0 12px rgba(124,255,155,.45)
+                );
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.25),
+                    white,
+                    rgba(124,255,155,.8),
+                    transparent
+                );
+
+            border-radius: 100px;
+        }
 
 
-.nation-hero h1 span {
-    background: linear-gradient(
-        100deg,
-        white,
-        var(--nation-accent),
-        var(--cyan)
+        .lovixien-sword::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: -4px;
+
+            width: 22px;
+            height: 16px;
+
+            border-radius: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #15191d,
+                    #69737a
+                );
+
+            box-shadow:
+                0 0 10px rgba(255,255,255,.15);
+        }
+
+
+        .lovixien-sword::after {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+            top: 1px;
+
+            width: 18px;
+            height: 6px;
+
+            background: #15191d;
+
+            border-radius: 2px;
+        }
+
+
+        .sword-left {
+            animation:
+                swordLeft 1.8s
+                cubic-bezier(.16,.8,.25,1)
+                forwards;
+        }
+
+
+        .sword-right {
+            animation:
+                swordRight 1.8s
+                cubic-bezier(.16,.8,.25,1)
+                forwards;
+        }
+
+
+        /* =========================
+           COINS
+        ========================= */
+
+        .lovixien-coin {
+            position: absolute;
+
+            top: -40px;
+
+            width: 14px;
+            height: 14px;
+
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+
+            font-size: 8px;
+            font-weight: 700;
+
+            color: rgba(255,255,255,.8);
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    white,
+                    #7cff9b 20%,
+                    #3a9d57 65%,
+                    #16351f
+                );
+
+            border: 1px solid
+                rgba(255,255,255,.35);
+
+            box-shadow:
+                0 0 10px
+                rgba(124,255,155,.25);
+
+            opacity: 0;
+
+            animation:
+                coinFall var(--fall-time)
+                linear forwards;
+
+            animation-delay: var(--delay);
+        }
+
+
+        /* =========================
+           CENTER FLASH
+        ========================= */
+
+        .lovixien-flash {
+            position: absolute;
+
+            width: 20px;
+            height: 20px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            box-shadow:
+                0 0 20px white,
+                0 0 60px var(--green),
+                0 0 120px var(--green);
+
+            opacity: 0;
+
+            animation:
+                lovixienFlash 1.8s ease forwards;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes swordLeft {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    translateX(-420px)
+                    translateY(-180px)
+                    rotate(-48deg);
+            }
+
+            25% {
+                opacity: .35;
+            }
+
+            70% {
+                opacity: .16;
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    translateX(0)
+                    translateY(0)
+                    rotate(43deg);
+            }
+
+        }
+
+
+        @keyframes swordRight {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    translateX(420px)
+                    translateY(-180px)
+                    rotate(48deg);
+            }
+
+            25% {
+                opacity: .35;
+            }
+
+            70% {
+                opacity: .16;
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    translateX(0)
+                    translateY(0)
+                    rotate(-43deg);
+            }
+
+        }
+
+
+        @keyframes coinFall {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    translateY(0)
+                    rotateY(0deg)
+                    rotateZ(0deg);
+            }
+
+            12% {
+                opacity: .75;
+            }
+
+            75% {
+                opacity: .45;
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    translateY(100vh)
+                    rotateY(720deg)
+                    rotateZ(180deg);
+            }
+
+        }
+
+
+        @keyframes lovixienFlash {
+
+            0% {
+                opacity: 0;
+
+                transform: scale(.2);
+            }
+
+            45% {
+                opacity: .65;
+
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+
+                transform: scale(3);
+            }
+
+        }
+
+
+        @keyframes lovixienIntroFade {
+
+            0% {
+                opacity: 1;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .lovixien-intro {
+                display: none;
+            }
+
+        }
+
+    `;
+
+    document.head.appendChild(style);
+
+
+    // =========================
+    // SWORDS
+    // =========================
+
+    const swordLeft = document.createElement("div");
+
+    swordLeft.className =
+        "lovixien-sword sword-left";
+
+
+    const swordRight = document.createElement("div");
+
+    swordRight.className =
+        "lovixien-sword sword-right";
+
+
+    intro.appendChild(swordLeft);
+    intro.appendChild(swordRight);
+
+
+    // =========================
+    // FLASH
+    // =========================
+
+    const flash = document.createElement("div");
+
+    flash.className =
+        "lovixien-flash";
+
+    intro.appendChild(flash);
+
+
+    // =========================
+    // COINS
+    // =========================
+
+    const coinCount = 24;
+
+    for (let i = 0; i < coinCount; i++) {
+
+        const coin = document.createElement("div");
+
+        coin.className =
+            "lovixien-coin";
+
+        // Les pièces restent principalement
+        // autour du centre, entre les épées.
+
+        const x =
+            (Math.random() - 0.5) * 260;
+
+        const delay =
+            1.0 + Math.random() * 1.7;
+
+        const fallTime =
+            2.2 + Math.random() * 2.2;
+
+
+        coin.style.left =
+            `calc(50% + ${x}px)`;
+
+        coin.style.setProperty(
+            "--delay",
+            `${delay}s`
+        );
+
+        coin.style.setProperty(
+            "--fall-time",
+            `${fallTime}s`
+        );
+
+
+        // Légère variation de taille
+
+        const scale =
+            0.7 + Math.random() * 0.8;
+
+        coin.style.transform =
+            `scale(${scale})`;
+
+
+        intro.appendChild(coin);
+
+    }
+
+
+    // =========================
+    // CLEANUP
+    // =========================
+
+    setTimeout(() => {
+
+        intro.remove();
+        style.remove();
+
+    }, 6500);
+
+
+    console.log(
+        "Empire Lovixien — page chargée."
     );
 
-    background-clip: text;
-    -webkit-background-clip: text;
-
-    color: transparent;
-}
-
-
-.nation-slogan {
-    color: var(--nation-accent);
-
-    font-size: 12px;
-
-    letter-spacing: .18em;
-
-    text-transform: uppercase;
-
-    margin-bottom: 20px;
-}
-
-
-.nation-intro {
-    max-width: 600px;
-
-    color: var(--muted);
-
-    line-height: 1.75;
-
-    font-size: 15px;
-}
-
-
-.nation-actions {
-    display: flex;
-
-    gap: 12px;
-
-    margin-top: 32px;
-
-    flex-wrap: wrap;
-}
-
-
-/* =========================
-   EMBLEM
-========================= */
-
-.nation-emblem {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 15px;
-}
-
-
-.emblem-frame {
-    width: min(100%, 380px);
-
-    aspect-ratio: 1 / 1;
-
-    padding: 15px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.05),
-            rgba(255,255,255,.01)
-        );
-
-    box-shadow:
-        0 40px 100px rgba(0,0,0,.35);
-}
-
-
-.emblem-placeholder {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    border-radius: 20px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            var(--nation-accent-soft),
-            transparent 60%
-        );
-
-    border: 1px solid rgba(255,255,255,.05);
-}
-
-
-.emblem-placeholder span {
-    color: #687078;
-
-    font-size: 9px;
-
-    letter-spacing: .18em;
-}
-
-
-.emblem-placeholder strong {
-    margin-top: 10px;
-
-    font-size: 28px;
-
-    letter-spacing: -.04em;
-}
-
-
-.emblem-caption {
-    color: #596269;
-
-    font-size: 9px;
-
-    letter-spacing: .16em;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.nation-section {
-    max-width: var(--max);
-
-    margin: auto;
-
-    padding: 120px 30px;
-}
-
-
-.nation-overview {
-    border-top: 1px solid var(--border);
-}
-
-
-.nation-stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 15px;
-
-    margin-top: 60px;
-}
-
-
-.nation-stat {
-    padding: 25px;
-
-    min-height: 130px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            transparent
-        );
-}
-
-
-.nation-stat span,
-.info-list span,
-.relation-card span {
-    display: block;
-
-    color: #687078;
-
-    font-size: 9px;
-
-    letter-spacing: .16em;
-}
-
-
-.nation-stat strong {
-    display: block;
-
-    margin-top: 15px;
-
-    font-size: 20px;
-}
-
-
-/* =========================
-   TWO COLUMNS
-========================= */
-
-.nation-two-columns {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-
-.nation-text p {
-    max-width: 560px;
-
-    color: var(--muted);
-
-    line-height: 1.75;
-
-    font-size: 14px;
-
-    margin-top: 20px;
-}
-
-
-/* =========================
-   HISTORY CARD
-========================= */
-
-.history-card {
-    padding: 35px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(124,255,155,.045),
-            transparent
-        );
-}
-
-
-.history-card span {
-    color: #687078;
-
-    font-size: 9px;
-
-    letter-spacing: .15em;
-}
-
-
-.history-card strong {
-    display: block;
-
-    margin-top: 8px;
-
-    font-size: 19px;
-}
-
-
-.history-line {
-    width: 1px;
-
-    height: 45px;
-
-    margin: 15px 0;
-
-    background:
-        linear-gradient(
-            var(--nation-accent),
-            transparent
-        );
-}
-
-
-/* =========================
-   TERRITORY
-========================= */
-
-.map-placeholder {
-    min-height: 420px;
-
-    margin-top: 60px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 1px solid var(--border);
-
-    border-radius: 25px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            var(--nation-accent-soft),
-            transparent 55%
-        );
-
-    text-align: center;
-}
-
-
-.map-placeholder span {
-    color: #687078;
-
-    font-size: 9px;
-
-    letter-spacing: .18em;
-}
-
-
-.map-placeholder strong {
-    margin-top: 12px;
-
-    font-size: 30px;
-}
-
-
-/* =========================
-   GOVERNMENT
-========================= */
-
-.info-list {
-    border: 1px solid var(--border);
-
-    border-radius: 25px;
-
-    overflow: hidden;
-}
-
-
-.info-list div {
-    padding: 22px 25px;
-
-    border-bottom: 1px solid var(--border);
-}
-
-
-.info-list div:last-child {
-    border-bottom: none;
-}
-
-
-.info-list strong {
-    display: block;
-
-    margin-top: 7px;
-
-    font-size: 16px;
-}
-
-
-/* =========================
-   MILITARY
-========================= */
-
-.military-card {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 25px;
-
-    margin-top: 60px;
-
-    padding: 30px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            transparent
-        );
-}
-
-
-.military-icon {
-    width: 55px;
-    height: 55px;
-
-    flex-shrink: 0;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 15px;
-
-    background: var(--nation-accent-soft);
-
-    color: var(--nation-accent);
-
-    font-size: 24px;
-}
-
-
-.military-card h3 {
-    font-size: 21px;
-
-    margin-bottom: 8px;
-}
-
-
-.military-card p {
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   RELATIONS
-========================= */
-
-.relations-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 15px;
-
-    margin-top: 60px;
-}
-
-
-.relation-card {
-    min-height: 150px;
-
-    padding: 25px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            transparent
-        );
-}
-
-
-.relation-card strong {
-    font-size: 15px;
-
-    color: var(--nation-accent);
-}
-
-
-/* =========================
-   FINAL
-========================= */
-
-.nation-final {
-    min-height: 550px;
-
-    display: grid;
-
-    place-items: center;
-
-    text-align: center;
-
-    padding: 100px 30px;
-
-    border-top: 1px solid var(--border);
-
-    border-bottom: 1px solid var(--border);
-
-    background:
-        radial-gradient(
-            circle at center,
-            var(--nation-accent-soft),
-            transparent 45%
-        );
-}
-
-
-.nation-final h2 {
-    font-size: clamp(50px, 7vw, 85px);
-
-    line-height: .9;
-
-    letter-spacing: -.07em;
-
-    margin: 20px 0;
-}
-
-
-.nation-final h2 span {
-    background: linear-gradient(
-        100deg,
-        white,
-        var(--nation-accent),
-        var(--cyan)
-    );
-
-    background-clip: text;
-    -webkit-background-clip: text;
-
-    color: transparent;
-}
-
-
-.nation-final p {
-    color: var(--muted);
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .nation-hero {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        padding:
-            130px
-            20px
-            80px;
-
-        gap: 50px;
-    }
-
-
-    .nation-intro {
-        margin: auto;
-    }
-
-
-    .nation-actions {
-        justify-content: center;
-    }
-
-
-    .nation-emblem {
-        order: -1;
-    }
-
-
-    .emblem-frame {
-        max-width: 280px;
-    }
-
-
-    .nation-section {
-        padding:
-            90px
-            20px;
-    }
-
-
-    .nation-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    .nation-two-columns {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-
-    .relations-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .nation-stats {
-        grid-template-columns: 1fr;
-    }
-
-
-    .military-card {
-        flex-direction: column;
-    }
-
-}
+});
