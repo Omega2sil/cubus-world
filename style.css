@@ -922,6 +922,21 @@ a {
 
     line-height: 1.6;
 }
+.feature-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: var(--green);
+
+    transition: .25s;
+}
+
+.feature-link:hover {
+    transform: translateX(5px);
+}
 
 
 /* =========================
