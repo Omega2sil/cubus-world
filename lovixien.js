@@ -5,7 +5,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // =========================
-    // CONTAINER
+    // CONTAINER.
     // =========================
 
     const intro = document.createElement("div");
