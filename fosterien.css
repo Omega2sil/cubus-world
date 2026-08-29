@@ -1,0 +1,370 @@
+/* =========================
+   FOSTERIEN PAGE
+========================= */
+
+.fosterien-page {
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.nation-hero {
+
+    min-height: 90vh;
+
+    max-width: var(--max);
+
+    margin: auto;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 150px 30px 100px;
+
+    text-align: center;
+
+}
+
+
+.nation-hero-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+}
+
+
+.nation-hero h1 {
+
+    font-size:
+        clamp(60px, 9vw, 110px);
+
+    line-height: .88;
+
+    letter-spacing: -.075em;
+
+    margin: 25px 0;
+
+}
+
+
+.nation-hero h1 span {
+
+    background:
+        linear-gradient(
+            100deg,
+            white,
+            #62d9ff,
+            #c77dff
+        );
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.nation-description {
+
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+}
+
+
+.nation-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.nation-section {
+
+    max-width: var(--max);
+
+    margin: auto;
+
+    padding:
+        100px
+        30px;
+
+}
+
+
+.nation-heading {
+
+    margin-bottom: 50px;
+
+}
+
+
+.nation-heading h2 {
+
+    font-size:
+        clamp(42px, 6vw, 72px);
+
+    line-height: .95;
+
+    letter-spacing: -.06em;
+
+    margin-top: 20px;
+
+}
+
+
+.nation-heading h2 span {
+
+    color: #62d9ff;
+
+}
+
+
+/* =========================
+   INFO GRID
+========================= */
+
+.nation-info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.nation-info-card {
+
+    position: relative;
+
+    padding: 32px;
+
+    min-height: 190px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.04),
+            transparent
+        );
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease;
+
+}
+
+
+.nation-info-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(98,217,255,.3);
+
+}
+
+
+.nation-card-number {
+
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #62d9ff;
+
+    font-size: 10px;
+
+    letter-spacing: .18em;
+
+}
+
+
+.nation-info-card h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 22px;
+
+}
+
+
+.nation-info-card p {
+
+    max-width: 520px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   FEATURE
+========================= */
+
+.nation-feature {
+
+    min-height: 55vh;
+
+    display: grid;
+
+    place-items: center;
+
+    padding:
+        100px 30px;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.nation-feature::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(98,217,255,.09),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.nation-feature-content {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.nation-feature h2 {
+
+    font-size:
+        clamp(45px, 7vw, 85px);
+
+    line-height: .9;
+
+    letter-spacing: -.07em;
+
+    margin: 25px 0;
+
+}
+
+
+.nation-feature h2 span {
+
+    color: #62d9ff;
+
+}
+
+
+.nation-feature p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .nation-hero {
+
+        padding:
+            130px
+            20px
+            80px;
+
+    }
+
+
+    .nation-section {
+
+        padding:
+            80px
+            20px;
+
+    }
+
+
+    .nation-info-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .nation-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+}
